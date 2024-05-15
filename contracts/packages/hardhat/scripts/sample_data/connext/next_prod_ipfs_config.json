@@ -1,0 +1,16 @@
+{
+  "name": "Connext NEXT Airdrop",
+  "title": "Connext NEXT Airdrop",
+  "description": "Connext NEXT Airdrop",
+  "intro": "<div />",
+  "vestingDescription": "Tokens are fully vested.",
+  "logo": {
+    "uri": "ipfs://QmWjJDJMQnzczZ4k6Zd4s6wCF1fEY4KscbF5SXkF2QWhuc",
+    "name": "connext_logo_small.png"
+  },
+  "favicon": {
+    "uri": "ipfs://QmWjJDJMQnzczZ4k6Zd4s6wCF1fEY4KscbF5SXkF2QWhuc",
+    "name": "connext_logo_small.png"
+  },
+  "merkleProof": "ipfs://QmceVff5vsUGGEVufCo8cw7Dfeb1MJC5xZ5YqhTsZR1iMp"
+}

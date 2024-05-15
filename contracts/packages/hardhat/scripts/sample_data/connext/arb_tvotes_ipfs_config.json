@@ -1,0 +1,20 @@
+{
+  "name": "Mainnet TVOTES Distributtion",
+  "title": "Mainnet TVOTES Distribution",
+  "description": "This is a test Connext distributor.",
+  "intro": "<div />",
+  "vestingDescription": "Tokens are fully vested.",
+  "logo": {
+    "uri": "ipfs://QmWjJDJMQnzczZ4k6Zd4s6wCF1fEY4KscbF5SXkF2QWhuc",
+    "name": "connext_logo_small.png"
+  },
+  "favicon": {
+    "uri": "ipfs://QmWjJDJMQnzczZ4k6Zd4s6wCF1fEY4KscbF5SXkF2QWhuc",
+    "name": "connext_logo_small.png"
+  },
+  "website": "https://tokensoft.io",
+  "twitter": "https://twitter.com/TokensoftInc",
+  "discord": "https://discord.gg/tokensoft",
+  "telegram": "https://t.me/tokensoftsupport",
+  "merkleProof": "ipfs://QmNTuiH59KPjzQxiBX9H9m7MRksNHzHCjqyPhw8dXv5n78"
+}

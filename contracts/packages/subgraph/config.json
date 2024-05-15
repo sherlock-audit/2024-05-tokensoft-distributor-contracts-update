@@ -1,0 +1,695 @@
+{
+  "arbitrum": {
+    "SubgraphNetwork": "arbitrum-one",
+    "LowestStartBlock": 54948060,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0x21896f02b7B33A8da6eC42a01D8C450D7A868A35",
+        "BlockNumber": 174141617
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0x0CaB80bCf2931DebDB1bd9137A3aF86C957b6e96",
+        "BlockNumber": 174141275
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0xb41169Cc124298Be20e2Ca956cC46E266ab5E203",
+        "BlockNumber": 54948060
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0xC61da7Db4981c8839b51B32d4c83cCdf47ca0b20",
+        "BlockNumber": 54950075
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0xA82d7ED01c31DD2A46681D18E3E213C9E9231605",
+        "BlockNumber": 54950092
+      }
+    ]
+  },
+  "arbitrumGoerli": {
+    "SubgraphNetwork": "arbitrum-goerli",
+    "LowestStartBlock": 1982862,
+    "FlatPriceSale": [
+      {
+        "Address": "0x07537efBa62504425f879E9D60A25aB09D139161",
+        "BlockNumber": 1982862
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0x17c14f6087C62666D28361697f4a9B4D39DC3Bc5",
+        "BlockNumber": 1982866
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0x71bE8339023d779f2f85893761729Bb27b97891d",
+        "BlockNumber": 3195631
+      }
+    ],
+    "ContinuousVestingMerkleDistributorFactory": [
+      {
+        "Address": "0xA67b71E9E68B29b107daEd47f526D118b590519a",
+        "BlockNumber": 52559517
+      }
+    ],
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0xC3BfE32951E24dba777309afa18D3d30a76945E6",
+        "BlockNumber": 52559204
+      }
+    ]
+  },
+  "avalanche": {
+    "SubgraphNetwork": "avalanche",
+    "LowestStartBlock": 14288822,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0x0cab80bcf2931debdb1bd9137a3af86c957b6e96",
+        "BlockNumber": 40834378
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0x797c0d5bc32bc29438c0555ea61eb0318be40797",
+        "BlockNumber": 40834329
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0x9Ef415dE715c0a55AA867bcDEa00eAf914aD6cb7",
+        "BlockNumber": 23986268
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0x92DcF0aFD197E73345c893b856B93ee68CB61809",
+        "BlockNumber": 23986265
+      }
+    ],
+    "SaleManager_v_1_0": [
+      {
+        "Address": "0xa82d7ed01c31dd2a46681d18e3e213c9e9231605",
+        "BlockNumber": 14288822
+      }
+    ],
+    "SaleManager_v_1_2": [
+      {
+        "Address": "0xa1A793d9Ff235FB02C570B2290Ee669144C6d053",
+        "BlockNumber": 16981202
+      }
+    ],
+    "SaleManager_v_1_3": [
+      {
+        "Address": "0xb64f3493384AcA9ceCCB80b73b50da572caa95E4",
+        "BlockNumber": 17878271
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0x245A9bD01ccF512D1374BE4F7A8Eb06dA21E6333",
+        "BlockNumber": 23979563
+      }
+    ]
+  },
+  "bsc": {
+    "SubgraphNetwork": "bsc",
+    "LowestStartBlock": 27037983,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0x700A81a525E259f13233c8da11b1d4632f3fdF91",
+        "BlockNumber": 35561541
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0x33f439DB3c004A0E6398FcCcf9f81d2637c226f9",
+        "BlockNumber": 35561501
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0xb41169Cc124298Be20e2Ca956cC46E266ab5E203",
+        "BlockNumber": 27037830,
+        "PublishedAt": "Mon, 03 Apr 2023 21:24:15 GMT",
+        "Git": {
+          "Branch": "bsc",
+          "Commit": "4e53d9535093e3becb27101940a44f2b249fcb00"
+        }
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0xC61da7Db4981c8839b51B32d4c83cCdf47ca0b20",
+        "BlockNumber": 27037983,
+        "PublishedAt": "Mon, 03 Apr 2023 21:32:16 GMT",
+        "Git": {
+          "Branch": "bsc",
+          "Commit": "4e53d9535093e3becb27101940a44f2b249fcb00"
+        }
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0xA82d7ED01c31DD2A46681D18E3E213C9E9231605",
+        "BlockNumber": 27037985,
+        "PublishedAt": "Mon, 03 Apr 2023 21:32:16 GMT",
+        "Git": {
+          "Branch": "bsc",
+          "Commit": "4e53d9535093e3becb27101940a44f2b249fcb00"
+        }
+      }
+    ],
+    "ContinuousVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x3dE4D3205fFc0c96257b39E81870EA2ddA5ED142",
+        "BlockNumber": 27351358
+      }
+    ],
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0xC8f492F6E0B573BC92f463F93d88D0210DFf480d",
+        "BlockNumber": 27350831
+      }
+    ],
+    "Trader": [
+      {
+        "Address": "0x65caF259cC7e2c5309451534d6a6FacBe971b399",
+        "BlockNumber": 27521609,
+        "PublishedAt": "Thu, 20 Apr 2023 19:38:14 GMT",
+        "Git": {
+          "Branch": "bsc",
+          "Commit": "ebe10653145b5ceee86f6810c3e02814a3e92b92"
+        }
+      }
+    ]
+  },
+  "bscTestnet": {
+    "SubgraphNetwork": "chapel",
+    "LowestStartBlock": 26602327,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0x700A81a525E259f13233c8da11b1d4632f3fdF91",
+        "BlockNumber": 37166399
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0x33f439db3c004a0e6398fcccf9f81d2637c226f9",
+        "BlockNumber": 37166297
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0xb41169Cc124298Be20e2Ca956cC46E266ab5E203",
+        "BlockNumber": 26602327
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0xC61da7Db4981c8839b51B32d4c83cCdf47ca0b20",
+        "BlockNumber": 26603355
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0xA82d7ED01c31DD2A46681D18E3E213C9E9231605",
+        "BlockNumber": 26603357
+      }
+    ],
+    "Trader": [
+      {
+        "Address": "0xf9d55F554175B8a18cDB167063383f5462442EAD",
+        "BlockNumber": 27010046
+      }
+    ],
+    "FakeChainlinkOracle": [
+      {
+        "Address": "0x245A9bD01ccF512D1374BE4F7A8Eb06dA21E6333",
+        "BlockNumber": 28632041,
+        "PublishedAt": "Tue, 04 Apr 2023 05:48:24 GMT",
+        "Git": {
+          "Branch": "bsc",
+          "Commit": "71f3d20251d3d1c156961c033a2240c19c4bd3e8"
+        }
+      }
+    ],
+    "GenericERC20": [
+      {
+        "Address": "0xeEDB0e8e589F9ADf6768fc006BaA1C6462f5e563",
+        "BlockNumber": 28632035,
+        "PublishedAt": "Tue, 04 Apr 2023 05:48:24 GMT",
+        "Git": {
+          "Branch": "bsc",
+          "Commit": "71f3d20251d3d1c156961c033a2240c19c4bd3e8"
+        }
+      }
+    ]
+  },
+  "fuji": {
+    "SubgraphNetwork": "fuji",
+    "LowestStartBlock": 9797319,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0x0cab80bcf2931debdb1bd9137a3af86c957b6e96",
+        "BlockNumber": 29529132
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0x797c0d5bc32bc29438c0555ea61eb0318be40797",
+        "BlockNumber": 29529092
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0xfE245D36F8b4079C62B74eD4FfE7B055DB1B5A2D",
+        "BlockNumber": 13851512
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0x7268A40faD837C02108391d984A2D59D2dFA2F26",
+        "BlockNumber": 13851489
+      }
+    ],
+    "SaleManager_v_1_0": [
+      {
+        "Address": "0xfB9b74bfec44155752b867B43B649E2eB36e0b8A",
+        "BlockNumber": 9797319
+      }
+    ],
+    "SaleManager_v_1_2": [
+      {
+        "Address": "0x80F00701F6c117AeA0adf4dC2ca576D8189Cf371",
+        "BlockNumber": 12035381
+      }
+    ],
+    "SaleManager_v_1_3": [
+      {
+        "Address": "0x7afd2700F8e915ed4D39897d0D284A54e6348Ad3",
+        "BlockNumber": 12035390
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0x5CC400249c383a5a3eF5252B7C2b992106AE5EEf",
+        "BlockNumber": 18257409
+      }
+    ],
+    "ContinuousVestingMerkleDistributorFactory": [
+      {
+        "Address": "0xD74DF1aB45F541dfD3477c35a680043463c0f5B8",
+        "BlockNumber": 27351358
+      }
+    ],
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x9D2b6490b463e4E15504AD438EA48AEEAf1c3ac8",
+        "BlockNumber": 27350831
+      }
+    ]
+  },
+  "gnosis": {
+    "SubgraphNetwork": "gnosis",
+    "Registry" : [
+      {
+        "Address": "0x9dEbe59f42Be5152B3C98c09bAA705d09253fE4D",
+        "BlockNumber": 29461994
+      }
+    ]
+  },
+  "goerli": {
+    "SubgraphNetwork": "goerli",
+    "LowestStartBlock": 7180529,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0x3526D3C2d6481Ec6843B41533727EeaE4312D26C",
+        "BlockNumber": 10421840
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0x99C9b22050E560E34d903a89388F4E41fCD61895",
+        "BlockNumber": 10421835
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0xF043A0488E4541D7c9a77a0f998e4687683399b0",
+        "BlockNumber": 7677509
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0x0b6E2c1fc63B0477f38062474e653CC1723c80Ff",
+        "BlockNumber": 7677507
+      }
+    ],
+    "SaleManager_v_1_0": [
+      {
+        "Address": "0xa069807cEa167873fD230507e2b85c1d052b5902",
+        "BlockNumber": 7255512
+      }
+    ],
+    "SaleManager_v_1_2": [
+      {
+        "Address": "0xeEDB0e8e589F9ADf6768fc006BaA1C6462f5e563",
+        "BlockNumber": 7180529
+      }
+    ],
+    "SaleManager_v_1_3": [
+      {
+        "Address": "0x75DF62a7E0a37b0E00aEC2d8D7D477B3e689094F",
+        "BlockNumber": 7267817
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0x3a03bF4106404B94d426bC31B831889f0d43960b",
+        "BlockNumber": 7972181
+      }
+    ],
+    "ContinuousVestingMerkleDistributorFactory": [
+      {
+        "Address": "0xAF4e2cD341eEfdeB0f4cD145deE0401974d2146f",
+        "BlockNumber": 9963542
+      }
+    ],
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x885504B11B1f1a31d0c7bcDb63207DE2436d65C3",
+        "BlockNumber": 9963535
+      }
+    ]
+  },
+  "goerliOptimism": {
+    "SubgraphNetwork": "optimism-goerli",
+    "LowestStartBlock": 16755318,
+    "FlatPriceSale": [
+      {
+        "Address": "0xb41169Cc124298Be20e2Ca956cC46E266ab5E203",
+        "BlockNumber": 2775412
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0xC61da7Db4981c8839b51B32d4c83cCdf47ca0b20",
+        "BlockNumber": 2775414
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0xb64f3493384AcA9ceCCB80b73b50da572caa95E4",
+        "BlockNumber": 3580794
+      }
+    ],
+    "ContinuousVestingMerkleDistributorFactory": [
+      {
+        "Address": "0xbAd6eAA9aE5eC73280422418771503641944b703",
+        "BlockNumber": 16756800
+      }
+    ],
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x62B708f0BC25AB14590c979Ca25B31953741bB2B",
+        "BlockNumber": 16755318
+      }
+    ]
+  },
+  "localhost": {
+    "SubgraphNetwork": "localhost",
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+        "BlockNumber": 0
+      }
+    ]
+  },
+  "mainnet": {
+    "SubgraphNetwork": "mainnet",
+    "LowestStartBlock": 14699410,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0x70e0e5a16c981eff0720f226a2e8ff418b5f3954",
+        "BlockNumber": 19085055
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0x57c08f6827dc9a88b253830d73e0d8314b32e8d1",
+        "BlockNumber": 19085015
+      }
+    ],
+    "TrancheVestingSale_2_0": [
+      {
+        "Address": "0x1F56f6A9aD23850Fb4dED9c32F25c28CD5d5c8aa",
+        "BlockNumber": 15729776
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0x865D024BFd9e1C2Cd665fAc6666c5C3E4a375dd7",
+        "BlockNumber": 15621922
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0x135D889aFF58584e12ab3bd4ce327a18aF3356Ef",
+        "BlockNumber": 15621920
+      }
+    ],
+    "SaleManager_v_1_0": [
+      {
+        "Address": "0x000047203100A45635029eC21bbBec5EC53Cb6f6",
+        "BlockNumber": 14699410
+      }
+    ],
+    "SaleManager_v_1_2": [
+      {
+        "Address": "0xfF7a903e86b10AaEB8Da65CeF0eBc07eA3F9354b",
+        "BlockNumber": 15085473
+      }
+    ],
+    "SaleManager_v_1_3": [
+      {
+        "Address": "0x6BbCA3864332C0FAd534b04C99C76E166aB2dfAA",
+        "BlockNumber": 15448945
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0xc70573B924C92618E6143F6ac4C2B1aD7ba8785b",
+        "BlockNumber": 16242929
+      }
+    ],
+    "ContinuousVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x1cA6e9d2a989AA947ab49248Ac4DE4Fa2e6B4c68",
+        "BlockNumber": 18529452
+      }
+    ],
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x68f84b0fE75d6B3c9B5355f2C5BaA146e56478DA",
+        "BlockNumber": 18529414
+      }
+    ]
+  },
+  "matic": {
+    "SubgraphNetwork": "matic",
+    "LowestStartBlock": 26645783,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0x48b8c957a91a5f2f5f751163b96c1ba7d8c1f1a7",
+        "BlockNumber": 52716422
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0xe12aa2502d536e6153a35341f897335e9b2e123f",
+        "BlockNumber": 52716380
+      }
+    ],
+    "SaleManager_v_1_0": [
+      {
+        "Address": "0xe6fF4586e8c28D0B47426D980468622f1001D234",
+        "BlockNumber": 26645783
+      }
+    ],
+    "SaleManager_v_1_3": [
+      {
+        "Address": "0x65caF259cC7e2c5309451534d6a6FacBe971b399",
+        "BlockNumber": 31294756
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0x135D889aFF58584e12ab3bd4ce327a18aF3356Ef",
+        "BlockNumber": 44405056,
+        "PublishedAt": "Tue, 27 Jun 2023 16:33:15 GMT",
+        "Git": {
+          "Branch": "update-polygon-contracts",
+          "Commit": "ebe10653145b5ceee86f6810c3e02814a3e92b92"
+        }
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0x865D024BFd9e1C2Cd665fAc6666c5C3E4a375dd7",
+        "BlockNumber": 44405062,
+        "PublishedAt": "Tue, 27 Jun 2023 16:33:15 GMT",
+        "Git": {
+          "Branch": "update-polygon-contracts",
+          "Commit": "ebe10653145b5ceee86f6810c3e02814a3e92b92"
+        }
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0xAFb6682999EDe4E29DF25Da04ab84f5b96030Fe8",
+        "BlockNumber": 44405137,
+        "PublishedAt": "Tue, 27 Jun 2023 16:35:55 GMT",
+        "Git": {
+          "Branch": "update-polygon-contracts",
+          "Commit": "ebe10653145b5ceee86f6810c3e02814a3e92b92"
+        }
+      }
+    ],
+    "ContinuousVestingMerkleDistributorFactory": [
+      {
+        "Address": "0xCe74507ef2eDcAFAd94047C12fD92F6155644335",
+        "BlockNumber": 49631606
+      }
+    ],
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x8D1Fa828E0B99f2CD9Bec6c51FF11E97B502db8A",
+        "BlockNumber": 49631536
+      }
+    ]
+  },
+  "mumbai": {
+    "SubgraphNetwork": "mumbai",
+    "LowestStartBlock": 27393431,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0xfad5031a6a40952c2820f17dac16f32896cd058e",
+        "BlockNumber": 45128635
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0x662d39a9ac0c0cd9210e519aeda7f76e967e4492",
+        "BlockNumber": 45127681
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0x31b7625997603Ce07B349d6f0300B6CB5896959b",
+        "BlockNumber": 28262063
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0x493E0a1f8304832658c461c2EaBfaeCeeE507097",
+        "BlockNumber": 28262061
+      }
+    ],
+    "SaleManager_v_1_0": [
+      {
+        "Address": "0x71bE8339023d779f2f85893761729Bb27b97891d",
+        "BlockNumber": 27393431
+      }
+    ],
+    "SaleManager_v_1_2": [
+      {
+        "Address": "0x9c2D86d00aFDe6e616CADfBc0fe2D47C1d22b1c8",
+        "BlockNumber": 27393439
+      }
+    ],
+    "SaleManager_v_1_3": [
+      {
+        "Address": "0xa1A793d9Ff235FB02C570B2290Ee669144C6d053",
+        "BlockNumber": 27393448
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0x7afd2700F8e915ed4D39897d0D284A54e6348Ad3",
+        "BlockNumber": 31312720
+      }
+    ],
+    "ContinuousVestingMerkleDistributorFactory": [
+      {
+        "Address": "0xAfb50dB4Ca828f66F005722ddeFC2081c28bDB9b",
+        "BlockNumber": 41933004
+      }
+    ],
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x2D7E80BB925C09d7d4490Aa7aCc046e928163B00",
+        "BlockNumber": 41932775
+      }
+    ]
+  },
+  "optimism": {
+    "SubgraphNetwork": "optimism",
+    "LowestStartBlock": 69959643,
+    "FlatPriceSaleFactory_v_2_1": [
+      {
+        "Address": "0x33f439DB3c004A0E6398FcCcf9f81d2637c226f9",
+        "BlockNumber": 115306849
+      }
+    ],
+    "FlatPriceSale_v_2_1": [
+      {
+        "Address": "0x21896f02b7B33A8da6eC42a01D8C450D7A868A35",
+        "BlockNumber": 115306723
+      }
+    ],
+    "Registry": [
+      {
+        "Address": "0xb41169Cc124298Be20e2Ca956cC46E266ab5E203",
+        "BlockNumber": 69955988
+      }
+    ],
+    "FlatPriceSale": [
+      {
+        "Address": "0xC61da7Db4981c8839b51B32d4c83cCdf47ca0b20",
+        "BlockNumber": 69959643
+      }
+    ],
+    "FlatPriceSaleFactory": [
+      {
+        "Address": "0xA82d7ED01c31DD2A46681D18E3E213C9E9231605",
+        "BlockNumber": 69959655
+      }
+    ],
+    "Trader": [
+      {
+        "Address": "0x65caF259cC7e2c5309451534d6a6FacBe971b399",
+        "BlockNumber": 72628723
+      }
+    ],
+    "ContinuousVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x17c14f6087C62666D28361697f4a9B4D39DC3Bc5",
+        "BlockNumber": 111856564
+      }
+    ],
+    "TrancheVestingMerkleDistributorFactory": [
+      {
+        "Address": "0x9c2D86d00aFDe6e616CADfBc0fe2D47C1d22b1c8",
+        "BlockNumber": 111857381
+      }
+    ]
+  }
+}

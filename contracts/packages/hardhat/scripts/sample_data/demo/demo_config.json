@@ -1,0 +1,20 @@
+{
+  "name": "Distribution",
+  "title": "NEW Token Distribution",
+  "description": "This is a demo distribution.",
+  "intro": "<div><p style='margin-top: 2em; margin-bottom: 2em; font-size: 16px;'>Congratulations! You are claiming NEW tokens.</p></div>",
+  "vestingDescription": "Tokens vest continously over 24 months.",
+  "logo": {
+    "uri": "ipfs://Qmd47S9KXwEuB2FY2PKWWA83F8tMsdPUuyAkZfdWRgGn3j",
+    "name": "arbitrum-shield.png"
+  },
+  "favicon": {
+    "uri": "ipfs://Qmd47S9KXwEuB2FY2PKWWA83F8tMsdPUuyAkZfdWRgGn3j",
+    "name": "arbitrum-shield.png"
+  },
+  "website": "https://tokensoft.io",
+  "twitter": "https://twitter.com/TokensoftInc",
+  "discord": "https://discord.gg/tokensoft",
+  "telegram": "https://t.me/tokensoftsupport",
+  "merkleProof": "ipfs://QmbFUzyi9RvtyiGzYcSo7G71zVFA6ptPX2gKYZrioDnbxc"
+}

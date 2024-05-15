@@ -1,0 +1,7 @@
+graph-node/data/
+
+subgraph.yaml
+generated/**
+build/**
+abis/**
+active-config.json

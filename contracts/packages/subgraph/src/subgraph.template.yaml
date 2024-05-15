@@ -1,0 +1,632 @@
+specVersion: 0.0.3
+schema:
+  file: ./src/schema.graphql
+dataSources:
+  {{#TrancheVestingSale_2_0.[0]}}
+  - kind: ethereum/contract
+    name: TrancheVestingSale_2_0
+    network: {{../SubgraphNetwork}}
+    source:
+      address: '{{Address}}'
+      abi: IDistributor
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/distributor/v3.0/distributorMapping.ts
+      entities:
+        - Distributor
+      abis:
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: IERC20Metadata
+          file: ./abis/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+      eventHandlers:
+        - event: InitializeDistributor(indexed address,uint256,string,uint256)
+          handler: handleInitializeDistributor
+  {{/TrancheVestingSale_2_0.[0]}}
+  {{#FlatPriceSaleFactory_v_2_1.[0]}}
+  - kind: ethereum/contract
+    name: FlatPriceSaleFactory_v_2_1
+    network: {{../SubgraphNetwork}}
+    source:
+      address: '{{Address}}'
+      abi: FlatPriceSaleFactory_v_2_1
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/sale/v2.1/flatPriceSaleFactoryMapping.ts
+      entities:
+        - Sale
+      abis:
+        - name: FlatPriceSaleFactory_v_2_1
+          file: ./abis/contracts/sale/v2.1/FlatPriceSaleFactory.sol/FlatPriceSaleFactory_v_2_1.json
+      eventHandlers:
+        - event: NewSale(indexed address,indexed address,(address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,string),string,address,bool)
+          handler: handleNewSale
+  {{/FlatPriceSaleFactory_v_2_1.[0]}}
+  {{#FlatPriceSale_v_2_1.[0]}}
+  - kind: ethereum/contract
+    name: FlatPriceSale_v_2_1
+    network: {{../SubgraphNetwork}}
+    source:
+      address: '{{Address}}'
+      abi: FlatPriceSale_v_2_1
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - SaleImplementation
+      abis:
+        - name: FlatPriceSale_v_2_1
+          file: ./abis/contracts/sale/v2.1/FlatPriceSale.sol/FlatPriceSale_v_2_1.json
+      eventHandlers:
+        - event: ImplementationConstructor(indexed address,uint256)
+          handler: handleImplementationConstructor
+      file: ./src/sale/v2.1/saleImplementationMapping.ts
+  {{/FlatPriceSale_v_2_1.[0]}}
+  {{#FlatPriceSaleFactory.[0]}}
+  - kind: ethereum/contract
+    name: FlatPriceSaleFactory
+    network: {{../SubgraphNetwork}}
+    source:
+      address: '{{Address}}'
+      abi: FlatPriceSaleFactory
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/sale/v2.0/flatPriceSaleFactoryMapping.ts
+      entities:
+        - Sale
+      abis:
+        - name: FlatPriceSaleFactory
+          file: ./abis/contracts/sale/v2/FlatPriceSaleFactory.sol/FlatPriceSaleFactory.json
+      eventHandlers:
+        - event: NewSale(indexed address,indexed address,(address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,string),string,address,bool)
+          handler: handleNewSale
+  {{/FlatPriceSaleFactory.[0]}}
+  {{#FlatPriceSale.[0]}}
+  - kind: ethereum/contract
+    name: FlatPriceSaleImplementation
+    network: {{../SubgraphNetwork}}
+    source:
+      address: '{{Address}}'
+      abi: FlatPriceSale
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - SaleImplementation
+      abis:
+        - name: FlatPriceSale
+          file: ./abis/contracts/sale/v2/FlatPriceSale.sol/FlatPriceSale.json
+      eventHandlers:
+        - event: ImplementationConstructor(indexed address,uint256)
+          handler: handleImplementationConstructor
+      file: ./src/sale/v2.0/saleImplementationMapping.ts
+  {{/FlatPriceSale.[0]}}
+  {{#SaleManager_v_1_3.[0]}}
+  - kind: ethereum/contract
+    name: SaleManager_v_1_3
+    network: {{../SubgraphNetwork}}
+    source:
+      abi: SaleManager_v_1_3
+      address: '{{Address}}'
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Purchase
+        - Sale
+        - Distributor
+      abis:
+        - name: SaleManager_v_1_3
+          file: ./abis/contracts/sale/v1.3/SaleManager.sol/SaleManager_v_1_3.json
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: IERC20Metadata
+          file: ./abis/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+      eventHandlers:
+        - event: NewSale(indexed bytes32,indexed bytes32,indexed address,address,uint256,uint256,uint256,uint256,uint256,uint256,string,uint256,uint8)
+          handler: handleNewSale
+        - event: UpdateStart(indexed bytes32,uint256)
+          handler: handleUpdateStart
+        - event: UpdateEnd(indexed bytes32,uint256)
+          handler: handleUpdateEnd
+        - event: UpdateMerkleRoot(indexed bytes32,bytes32)
+          handler: handleUpdateMerkleRoot
+        - event: Buy(indexed bytes32,indexed address,uint256,bool,bytes32[])
+          handler: handleBuy
+        - event: RegisterClaimManager(indexed bytes32,indexed address)
+          handler: handleRegisterClaimManager
+        - event: UpdateMaxQueueTime(indexed bytes32,uint256)
+          handler: handleUpdateMaxQueueTime
+        - event: Deploy(address,uint8,address)
+          handler: handleDeploy
+        - event: UpdateUri(indexed bytes32,string)
+          handler: handleUpdateUri
+      file: ./src/sale/v1.3/saleManagerMapping.ts
+  {{/SaleManager_v_1_3.[0]}}
+  {{#SaleManager_v_1_2.[0]}}
+  - kind: ethereum/contract
+    name: SaleManager_v_1_2
+    network: {{../SubgraphNetwork}}
+    source:
+      abi: SaleManager_v_1_2
+      address: '{{Address}}'
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Purchase
+        - Sale
+      abis:
+        - name: SaleManager_v_1_2
+          file: ./abis/contracts/sale/v1.2/SaleManager.sol/SaleManager_v_1_2.json
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: IERC20Metadata
+          file: ./abis/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+      eventHandlers:
+        - event: NewSale(indexed bytes32,indexed bytes32,indexed address,address,uint256,uint256,uint256,uint256,uint256,string,uint256,uint8)
+          handler: handleNewSale
+        - event: UpdateStart(indexed bytes32,uint256)
+          handler: handleUpdateStart
+        - event: UpdateEnd(indexed bytes32,uint256)
+          handler: handleUpdateEnd
+        - event: UpdateMerkleRoot(indexed bytes32,bytes32)
+          handler: handleUpdateMerkleRoot
+        - event: Buy(indexed bytes32,indexed address,uint256,bool,bytes32[])
+          handler: handleBuy
+        - event: RegisterClaimManager(indexed bytes32,indexed address)
+          handler: handleRegisterClaimManager
+        - event: UpdateMaxQueueTime(indexed bytes32,uint256)
+          handler: handleUpdateMaxQueueTime
+        - event: Deploy(address,uint8,address)
+          handler: handleDeploy
+        - event: UpdateUri(indexed bytes32,string)
+          handler: handleUpdateUri
+      file: ./src/sale/v1.2/saleManagerMapping.ts
+  {{/SaleManager_v_1_2.[0]}}
+  {{#SaleManager_v_1_0.[0]}}
+  - kind: ethereum/contract
+    name: SaleManager_v_1_0
+    network: {{../SubgraphNetwork}}
+    source:
+      abi: SaleManager_v_1_0
+      address: '{{Address}}'
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Purchase
+        - Sale
+      abis:
+        - name: SaleManager_v_1_0
+          file: ./abis/contracts/sale/v1.0/SaleManager.sol/SaleManager_v_1_0.json
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: IERC20Metadata
+          file: ./abis/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+      eventHandlers:
+        - event: NewSale(indexed bytes32,indexed bytes32,indexed address,uint256,uint256,uint256,uint256,uint256,string,string,uint256,uint8)
+          handler: handleNewSale
+        - event: UpdateStart(indexed bytes32,uint256)
+          handler: handleUpdateStart
+        - event: UpdateEnd(indexed bytes32,uint256)
+          handler: handleUpdateEnd
+        - event: UpdateMerkleRoot(indexed bytes32,bytes32)
+          handler: handleUpdateMerkleRoot
+        - event: Buy(indexed bytes32,indexed address,uint256,bool,bytes32[])
+          handler: handleBuy
+        - event: RegisterClaimManager(indexed bytes32,indexed address)
+          handler: handleRegisterClaimManager
+        - event: UpdateMaxQueueTime(indexed bytes32,uint256)
+          handler: handleUpdateMaxQueueTime
+      file: ./src/sale/v1.0/saleManagerMapping.ts
+  {{/SaleManager_v_1_0.[0]}}
+  {{#Registry.[0]}}
+  - kind: ethereum/contract
+    name: Registry
+    network: {{../SubgraphNetwork}}
+    source:
+      address: '{{Address}}'
+      abi: Registry
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Registry
+        - Distributor
+        - AdvancedDistributor
+        - TrancheVesting
+        - ContinuousVesting
+        - MerkleSet
+        - CrosschainDistributor
+      abis:
+        - name: Registry
+          file: ./abis/contracts/utilities/Registry.sol/Registry.json
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: AdvancedDistributor
+          file: ./abis/contracts/claim/abstract/AdvancedDistributor.sol/AdvancedDistributor.json
+        - name: ITrancheVesting
+          file: ./abis/contracts/interfaces/ITrancheVesting.sol/ITrancheVesting.json
+        - name: IPriceTierVesting
+          file: ./abis/contracts/interfaces/IPriceTierVesting.sol/IPriceTierVesting.json
+        - name: IContinuousVesting
+          file: ./abis/contracts/interfaces/IContinuousVesting.sol/IContinuousVesting.json
+        - name: IERC20Metadata
+          file: ./abis/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+        - name: IMerkleSet
+          file: ./abis/contracts/interfaces/IMerkleSet.sol/IMerkleSet.json
+        - name: Trader
+          file: ./abis/contracts/trade/Trader.sol/Trader.json
+        - name: CrosschainDistributor
+          file: ./abis/contracts/claim/abstract/CrosschainDistributor.sol/CrosschainDistributor.json
+        - name: ERC20Votes
+          file: ./abis/contracts/token/ERC20Votes.sol/MyERC20Votes.json
+      eventHandlers:
+        - event: DeployRegistry()
+          handler: handleDeployRegistry
+        - event: Register(indexed address,bytes4[],address)
+          handler: handleRegister
+        - event: Unregister(indexed address,bytes4[],address)
+          handler: handleUnregister
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/utilities/registryMapping.ts
+  {{/Registry.[0]}}
+  {{#ContinuousVestingMerkleDistributorFactory.[0]}}
+  - kind: ethereum/contract
+    name: ContinuousVestingMerkleDistributorFactory
+    network: {{../SubgraphNetwork}}
+    source:
+      address: '{{Address}}'
+      abi: ContinuousVestingMerkleDistributorFactory
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/distributor/v3.0/continuousVestingMerkleDistributorFactoryMapping.ts
+      entities:
+        - Distributor
+        - AdvancedDistributor
+        - ContinuousVesting
+      abis:
+        - name: AdvancedDistributor
+          file: ./abis/contracts/claim/abstract/AdvancedDistributor.sol/AdvancedDistributor.json
+        - name: ContinuousVestingMerkleDistributorFactory
+          file: ./abis/contracts/claim/factory/ContinuousVestingMerkleDistributorFactory.sol/ContinuousVestingMerkleDistributorFactory.json
+        - name: IContinuousVesting
+          file: ./abis/contracts/interfaces/IContinuousVesting.sol/IContinuousVesting.json
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: IERC20Metadata
+          file: ./abis/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+        - name: IMerkleSet
+          file: ./abis/contracts/interfaces/IMerkleSet.sol/IMerkleSet.json
+      eventHandlers:
+        - event: DistributorDeployed(indexed address)
+          handler: handleDistributorDeployed
+  {{/ContinuousVestingMerkleDistributorFactory.[0]}}
+  {{#TrancheVestingMerkleDistributorFactory.[0]}}
+  - kind: ethereum/contract
+    name: TrancheVestingMerkleDistributorFactory
+    network: {{../SubgraphNetwork}}
+    source:
+      address: '{{Address}}'
+      abi: TrancheVestingMerkleDistributorFactory
+      startBlock: {{BlockNumber}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/distributor/v3.0/trancheVestingMerkleDistributorFactoryMapping.ts
+      entities:
+        - Distributor
+        - AdvancedDistributor
+        - TrancheVesting
+      abis:
+        - name: AdvancedDistributor
+          file: ./abis/contracts/claim/abstract/AdvancedDistributor.sol/AdvancedDistributor.json
+        - name: TrancheVestingMerkleDistributorFactory
+          file: ./abis/contracts/claim/factory/TrancheVestingMerkleDistributorFactory.sol/TrancheVestingMerkleDistributorFactory.json
+        - name: ITrancheVesting
+          file: ./abis/contracts/interfaces/ITrancheVesting.sol/ITrancheVesting.json
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: IERC20Metadata
+          file: ./abis/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+        - name: IMerkleSet
+          file: ./abis/contracts/interfaces/IMerkleSet.sol/IMerkleSet.json
+      eventHandlers:
+        - event: DistributorDeployed(indexed address)
+          handler: handleDistributorDeployed
+  {{/TrancheVestingMerkleDistributorFactory.[0]}}
+  # Temporary solution until we have a IContinuousVesting template working
+  - kind: ethereum/contract
+    name: ContinuousVestingMerkleDistributor
+    network: {{SubgraphNetwork}}
+    source:
+      abi: ContinuousVestingMerkleDistributor
+      startBlock: {{LowestStartBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/distributor/v3.0/continuousVestingMapping.ts
+      entities:
+        - ContinuousVesting
+      abis:
+        - name: ContinuousVestingMerkleDistributor
+          file: ./abis/contracts/claim/factory/ContinuousVestingMerkleDistributor.sol/ContinuousVestingMerkleDistributor.json
+      eventHandlers:
+        - event: SetContinuousVesting(uint256,uint256,uint256)
+          handler: handleSetContinuousVesting
+templates:
+  - kind: ethereum/contract
+    name: FlatPriceSale
+    network: {{SubgraphNetwork}}
+    source:
+      abi: FlatPriceSale
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/sale/v2.0/saleMapping.ts
+      entities:
+        - Purchase
+        - Sale
+        - Distributor
+      abis:
+        - name: FlatPriceSale
+          file: ./abis/contracts/sale/v2/FlatPriceSale.sol/FlatPriceSale.json
+        - name: FlatPriceSaleFactory
+          file: ./abis/contracts/sale/v2/FlatPriceSaleFactory.sol/FlatPriceSaleFactory.json
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: IERC20Metadata
+          file: ./abis/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+      eventHandlers:
+        - event: Buy(indexed address,indexed address,uint256,uint256,uint256)
+          handler: handleBuy
+        - event: Update((address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,string))
+          handler: handleUpdate
+        - event: Initialize((address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,string),string,address,bool)
+          handler: handleInitialize
+        - event: SetPaymentTokenInfo(address,(address,uint8))
+          handler: handleSetPaymentTokenInfo
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: SweepToken(indexed address,uint256)
+          handler: handleSweepToken
+        - event: SweepNative(uint256)
+          handler: handleSweepNative
+        - event: RegisterDistributor(address)
+          handler: handleRegisterDistributor
+  # We use a patched interface definition to handle older distributors with a slightly different InitializeDistributor signature
+  # - kind: ethereum/contract
+  #   name: Distributor
+  #   network: {{SubgraphNetwork}}
+  #   source:
+  #     abi: IDistributorPatched
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.6
+  #     language: wasm/assemblyscript
+  #     file: ./src/distributor/v3.0/distributorMapping.ts
+  #     entities:
+  #       - Distributor
+  #       - DistributionRecord
+  #       - Claim
+  #     abis:
+  #       - name: IDistributorPatched
+  #         file: ./abis/contracts/interfaces/IDistributorPatched.sol/IDistributorPatched.json
+  #     eventHandlers:
+  #       - event: InitializeDistributionRecord(indexed address,uint256)
+  #         handler: handleInitializeDistributionRecord
+  #       - event: Claim(indexed address,uint256)
+  #         handler: handleClaim
+  # Older distributors had a slightly different event signature
+  - kind: ethereum/contract
+    name: Distributor
+    network: {{SubgraphNetwork}}
+    source:
+      abi: IDistributor
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/distributor/v3.0/distributorMapping.ts
+      entities:
+        - Distributor
+        - DistributionRecord
+        - Claim
+      abis:
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+      eventHandlers:
+        - event: InitializeDistributionRecord(indexed address,uint256)
+          handler: handleInitializeDistributionRecord
+        - event: Claim(indexed address,uint256)
+          handler: handleClaim
+  - kind: ethereum/contract
+    name: AdvancedDistributor
+    network: {{SubgraphNetwork}}
+    source:
+      abi: AdvancedDistributor
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/distributor/v3.0/advancedDistributorMapping.ts
+      entities:
+        - Distributor
+        - AdvancedDistributor
+        - DistributionRecord
+        - Claim
+      abis:
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: AdvancedDistributor
+          file: ./abis/contracts/claim/abstract/AdvancedDistributor.sol/AdvancedDistributor.json
+      eventHandlers:
+        # (Note that basic Distributor events and MerkleSet events are handled elsewhere)
+        # Ownable
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        # Sweepable
+        - event: SweepToken(indexed address,uint256)
+          handler: handleSweepToken
+        - event: SweepNative(uint256)
+          handler: handleSweepNative
+        - event: SetSweepRecipient(address)
+          handler: handleSweepRecipient
+        # IAdjustable
+        - event: Adjust(indexed address,int256)
+          handler: handleAdjust
+        - event: SetToken(indexed address)
+          handler: handleSetToken
+        - event: SetTotal(uint256)
+          handler: handleSetTotal
+        - event: SetUri(indexed string)
+          handler: handleSetUri
+        - event: SetVoteFactor(uint256)
+          handler: handleSetVoteFactor
+
+  # This configuration for ContinuousVesting is commented out because it is not working right now
+  # - kind: ethereum/contract
+  #   name: ContinuousVesting
+  #   network: {{SubgraphNetwork}}
+  #   source:
+  #     abi: IContinuousVesting
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.6
+  #     language: wasm/assemblyscript
+  #     file: ./src/distributor/v3.0/continuousVestingMapping.ts
+  #     entities:
+  #       - ContinuousVesting
+  #     abis:
+  #       - name: IContinuousVesting
+  #         file: ./abis/contracts/interfaces/IContinuousVesting.sol/IContinuousVesting.json
+  #     eventHandlers:
+  #       - event: SetContinuousVesting(uint256,uint256,uint256)
+  #         handler: handleSetContinuousVesting
+
+  - kind: ethereum/contract
+    name: TrancheVesting
+    network: {{SubgraphNetwork}}
+    source:
+      abi: ITrancheVesting
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/distributor/v3.0/trancheVestingMapping.ts
+      entities:
+        - Distributor
+        - Tranche
+        - TrancheVesting
+      abis:
+        - name: ITrancheVesting
+          file: ./abis/contracts/interfaces/ITrancheVesting.sol/ITrancheVesting.json
+      eventHandlers:
+        - event: SetTranche(indexed uint256,uint128,uint128)
+          handler: handleSetTranche
+
+  - kind: ethereum/contract
+    name: MerkleSet
+    network: {{SubgraphNetwork}}
+    source:
+      abi: IMerkleSet
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/distributor/v3.0/merkleSetMapping.ts
+      entities:
+        - Distributor
+        - MerkleSet
+      abis:
+        - name: IMerkleSet
+          file: ./abis/contracts/interfaces/IMerkleSet.sol/IMerkleSet.json
+      eventHandlers:
+        - event: SetMerkleRoot(bytes32)
+          handler: handleSetMerkleRoot
+
+  - kind: ethereum/contract
+    name: Trader
+    network: {{SubgraphNetwork}}
+    source:
+      abi: Trader
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/trade/traderMapping.ts
+      entities:
+        - Trade
+        - Trader
+      abis:
+        - name: Trader
+          file: ./abis/contracts/trade/Trader.sol/Trader.json
+      eventHandlers:
+        - event: SetConfig(address,uint256)
+          handler: handleSetConfig
+        - event: SetSweepRecipient(address)
+          handler: handleSetSweepRecipient
+        - event: HashflowTradeSingleHop((address,address,address,address,address,address,uint256,uint256,uint256,uint256,uint256,bytes32,bytes))
+          handler: handleHashflowTradeSingleHop
+        - event: HashflowTradeXChain((uint16,uint16,address,bytes32,address,bytes32,address,address,address,uint256,uint256,uint256,uint256,bytes32,bytes),uint8)
+          handler: handleHashflowTradeXChain
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+  - kind: ethereum/contract
+    name: CrosschainDistributor
+    network: {{SubgraphNetwork}}
+    source:
+      abi: CrosschainDistributor
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/distributor/v3.0/crosschainDistributorMapping.ts
+      entities:
+        - Distributor
+        - DistributionRecord
+        - Account
+        - Claim
+      abis:
+        - name: CrosschainDistributor
+          file: ./abis/contracts/claim/abstract/CrosschainDistributor.sol/CrosschainDistributor.json
+        - name: IDistributor
+          file: ./abis/contracts/interfaces/IDistributor.sol/IDistributor.json
+        - name: IERC20Metadata
+          file: ./abis/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol/IERC20Metadata.json
+      eventHandlers:
+        - event: CrosschainClaim(indexed bytes32,indexed address,indexed address,uint32,uint256)
+          handler: handleCrosschainClaim
