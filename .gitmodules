@@ -1,0 +1,3 @@
+[submodule "sherlock_contracts/lib/forge-std"]
+	path = sherlock_contracts/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
