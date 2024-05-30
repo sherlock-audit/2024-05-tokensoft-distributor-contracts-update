@@ -1,0 +1,20 @@
+{
+  "name": "Continuous Vesting Merkle Distributor - closed",
+  "title": "NEW Token Distribution",
+  "description": "This is a test continuous vesting merkle distributor.",
+  "intro": "<div><p style='margin-top: 2em; margin-bottom: 2em; font-size: 16px;'>Congratulations! You are claiming NEW tokens.</p></div>",
+  "vestingDescription": "Tokens vest continously over 12 months beginning Jan 1, 2022.",
+  "logo": {
+    "uri": "ipfs://QmXtRod9yF3oDKMrWkmdZf9sfSbwXnFoixejmpDxEvES2E",
+    "name": "test_logo.png"
+  },
+  "favicon": {
+    "uri": "ipfs://QmXtRod9yF3oDKMrWkmdZf9sfSbwXnFoixejmpDxEvES2E",
+    "name": "test_logo.png"
+  },
+  "website": "https://tokensoft.io",
+  "twitter": "https://twitter.com/TokensoftInc",
+  "discord": "https://discord.gg/tokensoft",
+  "telegram": "https://t.me/tokensoftsupport",
+  "merkleProof": "ipfs://QmT93k4kwP3YHnMUPpScE56onA2j6ZYbh7zrWFZv37zpHc"
+}

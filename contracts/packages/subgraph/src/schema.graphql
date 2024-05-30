@@ -1,0 +1,269 @@
+# v1.x sales reuse the same SaleManager contract
+# v2.x sales are clones of an Implementation contract
+
+type SaleImplementation @entity {
+  id: ID! # Address
+  feeRecipient: Account
+  feeBips: BigInt!
+  saleCount: BigInt!
+  purchaseCount: BigInt!
+  sales: [Sale!] @derivedFrom(field: "implementation")
+  # only necessary for v1.x sales where payment config is reused across sales
+  paymentMethods: [PaymentMethod!]
+  version: String!
+  createdAt: BigInt!
+}
+
+type Sale @entity {
+  id: ID! # Address for v2.x sales, sale id for v1.x sales
+  registeredAddress: RegisteredAddress
+  createdAt: BigInt!
+
+  implementation: SaleImplementation! # Address for implementation (v2.x) or manager (v1.x) contract
+  idBytes: Bytes!
+  owner: Account!
+  distributor: Distributor
+
+  # from config
+  recipient: Account!
+  merkleRoot: Bytes!
+  saleMaximum: BigInt!
+  userMaximum: BigInt!
+  purchaseMinimum: BigInt!
+  startTime: BigInt!
+  endTime: BigInt!
+  purchases: [Purchase!] @derivedFrom(field: "sale")
+  maxQueueTime: BigInt!
+  uris: [String!]!
+
+  # payment info
+  baseCurrency: String!
+  paymentMethods: [PaymentMethod!]!
+
+  # Metrics
+  purchaseCount: BigInt!
+  purchaseTotal: BigInt!  # Denominated in base currency with 8 decimals
+}
+
+type PaymentMethod @entity {
+  id: ID! # `${token}-${oracle}`
+  token: Bytes # native payments have no token
+  oracle: Bytes # v1.x token contracts have no oracle (assume stablecoin treated at par)
+  native: Boolean!
+  decimals: Int!
+  purchaseTotal: BigInt! # Denominated in payment token
+  purchaseCount: BigInt!
+  symbol: String # native payments have no symbol
+}
+
+type Account @entity {
+  id: ID! # Address
+  purchases: [Purchase!]! @derivedFrom(field: "buyer")
+  ownerSales: [Sale!] @derivedFrom(field: "owner")
+  ownerRegistries: [Registry!] @derivedFrom(field: "owner")
+  ownerAdvancedDistributors: [AdvancedDistributor!] @derivedFrom(field: "owner")
+  recipientSales: [Sale!] @derivedFrom(field: "recipient")
+  feeRecipientSaleImplementations: [SaleImplementation!] @derivedFrom(field: "feeRecipient")
+  distributionRecords: [DistributionRecord!] @derivedFrom(field: "beneficiary")
+  createdAt: BigInt!
+}
+
+type Purchase @entity {
+  id: ID! # `${txHash}-${eventIndex}`
+  sale: Sale!
+  buyer: Account!
+  baseCurrencyValue: BigInt! # Economic value of purchase with 8 decimals (eg 10.01 USD would be 1001000000) 
+  paymentMethod: PaymentMethod! # payment method used for this purchase
+  spent: BigInt! # number of payment tokens spent, including fee, with that token's base decimals (e.g. 1.0 USDC would be 1000000)
+  fee: BigInt! # number of payment tokens sent to the fee recipient (e.g. 0.01 USDC would be 1000)
+  price: BigInt! # price oracle for <PaymentMethod>/<BaseCurrency> at time of purchase, with 8 decimals (eg ETH/USD price of $1820.86/ETH would be 182086000000)
+  transactionHash: String!
+  uri: String!
+  createdAt: BigInt!
+}
+
+# A contract that tracks claims 
+type Distributor @entity  {
+  # common metadata
+  id: ID! # Address
+  registeredAddress: RegisteredAddress
+  createdAt: BigInt!
+
+  # universal distributor config
+  sale: Sale @derivedFrom(field: "distributor")
+  name: String!
+  version: BigInt!
+  token: Bytes!
+  tokenSymbol: String!
+  tokenDecimals: BigInt!
+  total: BigInt!
+  claimed: BigInt!
+  remaining: BigInt!
+  distributionRecords: [DistributionRecord!]! @derivedFrom(field: "distributor")
+  uris: [String!]!
+  fractionDenominator: BigInt!
+
+  # additional optional config based on distributor interfaces
+  advanced: AdvancedDistributor @derivedFrom(field: "distributor")
+  trancheVesting: TrancheVesting @derivedFrom(field: "distributor")
+  tierVesting: [PriceTier!] @derivedFrom(field: "distributor")
+  continuousVesting: ContinuousVesting @derivedFrom(field: "distributor")
+  merkleSet: MerkleSet @derivedFrom(field: "distributor")
+
+  # crosschain ?????
+}
+
+type AdvancedDistributor @entity {
+  id: ID! # `${address}-advanced`
+  distributor: Distributor!
+  owner: Account
+  sweepRecipient: Account
+  voteFactor: BigInt
+  createdAt: BigInt!
+}
+
+type TrancheVesting @entity {
+  id: ID! # `${address}-trancheVesting`
+  distributor: Distributor!
+  tranches: [Tranche!]! @derivedFrom(field: "trancheVesting")
+  createdAt: BigInt!
+}
+
+type Tranche @entity {
+  id: ID! # `${address}-trancheVesting-${index}`
+  trancheVesting: TrancheVesting!
+  index: BigInt!
+  time: BigInt!
+  vestedFraction: BigInt!
+  createdAt: BigInt!
+}
+
+type PriceTier @entity {
+  id: ID! # `${address}-trancheVesting-${time}`
+  distributor: Distributor!
+  price: BigInt!
+  vestedFraction: BigInt!
+  oracle: String!
+  createdAt: BigInt!
+}
+
+type ContinuousVesting @entity {
+  id: ID! # `${address}-continuousVesting`
+  distributor: Distributor!
+  start: BigInt!
+  cliff: BigInt!
+  end: BigInt!
+  createdAt: BigInt!
+}
+
+type MerkleSet @entity {
+  id: ID! # `${address}-merkleSet`
+  distributor: Distributor!
+  root: String!
+  createdAt: BigInt!
+}
+
+# Tracks each user's history of claims from a distribution contract
+type DistributionRecord @entity {
+  id: ID! # `${distributorAddress}-${beneficiaryAddress}`
+  distributor: Distributor!
+  beneficiary: Account!
+  claims: [Claim!]! @derivedFrom(field: "distributionRecord")
+  adjustments: [Adjustment!]! @derivedFrom(field: "distributionRecord")
+  claimed: BigInt!
+  createdAt: BigInt!
+}
+
+# A specific claim from a distribution contract
+type Claim @entity {
+  id: ID! # `${txHash}-${eventIndex}`
+  distributionRecord: DistributionRecord!
+  amount: BigInt!
+  transactionHash: String!
+  uri: String!
+  createdAt: BigInt!
+
+  # optional fields for cross-chain claims
+  recipient: Account
+  recipientChain: BigInt
+  transferId: Bytes
+}
+
+type Adjustment @entity {
+  id: ID! # `${txHash}-${eventIndex}`
+  distributionRecord: DistributionRecord!
+  amount: BigInt!
+  transactionHash: String!
+  uri: String!
+  createdAt: BigInt!
+}
+
+# Note: schema is designed to support only a single registry
+type Registry @entity {
+  id: ID! # address
+  addresses: [RegisteredAddress!]! @derivedFrom(field: "registry")
+  admins: [String!]!
+  owner: Account!
+  createdAt: BigInt!
+}
+
+type RegisteredAddress @entity {
+  id: ID! # address
+  registry: Registry!
+  interfaceIds: [String!]!
+  interfaceNames: [String!]!
+  createdAt: BigInt!
+}
+
+type Trader @entity {
+  id: ID! # address
+  createdAt: BigInt!
+  fee: BigInt!
+  feeRecipient: String!
+  router: String!
+  owner: String!
+  recipient: String!
+  trades: [Trade!]! @derivedFrom(field: "traderContract")
+  crossChainTrades: [CrossChainTrade!]! @derivedFrom(field: "traderContract")
+}
+
+type Trade @entity {
+  id: ID! # `${txHash}-${eventIndex}`
+  createdAt: BigInt!
+  traderContract: Trader!
+  pool: String!
+  externalAccount: String!
+  trader: String!
+  effectiveTrader: String!
+  baseToken: String!
+  quoteToken: String!
+  effectiveBaseTokenAmount: BigInt!
+  maxBaseTokenAmount: BigInt!
+  maxQuoteTokenAmount: BigInt!
+  quoteExpiry: BigInt!
+  nonce: BigInt!
+  txid: Bytes!
+  signature: Bytes!
+}
+
+type CrossChainTrade @entity {
+  id: ID! # `${txHash}-${eventIndex}`
+  createdAt: BigInt!
+  traderContract: Trader!
+  protocol: BigInt!
+  srcChainId: BigInt!
+  dstChainId: BigInt!
+  srcPool: String!
+  dstPool: String!
+  srcExternalAccount: String!
+  dstExternalAccount: String!
+  trader: String
+  baseToken: String!
+  quoteToken: String!
+  baseTokenAmount: BigInt!
+  quoteTokenAmount: BigInt!
+  quoteExpiry: BigInt!
+  nonce: BigInt!
+  txid: Bytes!
+  signature: Bytes!
+}

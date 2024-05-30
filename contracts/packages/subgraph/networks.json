@@ -1,0 +1,210 @@
+{
+  "mumbai": {
+    "CrosschainTrancheVestingMerkle": {
+      "address": "0xcD7dE973264D5967D930Ef5144C59E9811ce5787"
+    },
+    "TrancheVestingSale_2_0": {
+      "address": "0x1F56f6A9aD23850Fb4dED9c32F25c28CD5d5c8aa",
+      "startBlock": 15729776
+    },
+    "FlatPriceSaleFactory": {
+      "address": "0x865D024BFd9e1C2Cd665fAc6666c5C3E4a375dd7",
+      "startBlock": 15621922
+    },
+    "FlatPriceSaleImplementation": {
+      "address": "0x135D889aFF58584e12ab3bd4ce327a18aF3356Ef",
+      "startBlock": 15621920
+    },
+    "SaleManager_v_1_0": {
+      "address": "0x000047203100A45635029eC21bbBec5EC53Cb6f6",
+      "startBlock": 14699410
+    },
+    "SaleManager_v_1_2": {
+      "address": "0xfF7a903e86b10AaEB8Da65CeF0eBc07eA3F9354b",
+      "startBlock": 15085473
+    },
+    "SaleManager_v_1_3": {
+      "address": "0x6BbCA3864332C0FAd534b04C99C76E166aB2dfAA",
+      "startBlock": 15448945
+    },
+    "Registry": {
+      "address": "0xc70573B924C92618E6143F6ac4C2B1aD7ba8785b",
+      "startBlock": 16242929
+    },
+    "ContinuousVestingMerkle": {
+      "address": "0x2A8a6739421f810a5A80a6E1B62F12e39E6860f4"
+    },
+    "GenericERC20": {
+      "address": "0x80190AB5C8Ccc5f1655a7E9Bd59554D683494Ac5"
+    },
+    "MyERC20Votes": {
+      "address": "0x0d809bA7409c4c67F8C11c0c13dc848E48b0d7DE"
+    },
+    "TrancheVestingMerkle": {
+      "address": "0x7430aF1190Aea59a5484F96208cdDFCd6F7199E1"
+    },
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0xfAD5031a6a40952c2820f17dAc16F32896Cd058e"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0x662d39a9Ac0c0Cd9210E519AedA7F76e967e4492"
+    }
+  },
+  "localhost": {
+    "Registry": {
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+    },
+    "ConnextMock": {
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"
+    },
+    "CrosschainTrancheVestingMerkle": {
+      "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9"
+    },
+    "MyERC20Votes": {
+      "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+    }
+  },
+  "goerli": {
+    "FlatPriceSaleFactory": {
+      "address": "0xF043A0488E4541D7c9a77a0f998e4687683399b0",
+      "startBlock": 7677509
+    },
+    "FlatPriceSaleImplementation": {
+      "address": "0x0b6E2c1fc63B0477f38062474e653CC1723c80Ff",
+      "startBlock": 7677507
+    },
+    "SaleManager_v_1_0": {
+      "address": "0xa069807cEa167873fD230507e2b85c1d052b5902",
+      "startBlock": 7255512
+    },
+    "SaleManager_v_1_2": {
+      "address": "0xeEDB0e8e589F9ADf6768fc006BaA1C6462f5e563",
+      "startBlock": 7180529
+    },
+    "SaleManager_v_1_3": {
+      "address": "0x75DF62a7E0a37b0E00aEC2d8D7D477B3e689094F",
+      "startBlock": 7267817
+    },
+    "Registry": {
+      "address": "0x3a03bF4106404B94d426bC31B831889f0d43960b",
+      "startBlock": 7972181
+    },
+    "ContinuousVestingMerkle": {
+      "address": "0x636f193207F504827a9d4Ef29720e288c11752D9"
+    },
+    "Satellite": {
+      "address": "0xa27fE80F7F75BE7C5a82B68C881e121B76dBc5A6"
+    },
+    "GenericERC20": {
+      "address": "0x7d89E6d526FFA0AC1dADB1c0527271b957d5A03b"
+    },
+    "TrancheVestingMerkle": {
+      "address": "0xE6C7f81DeCcA4987c387981650829286591aBfE5"
+    },
+    "MyERC20Votes": {
+      "address": "0x5342070B7AeB70Ea4A183b317abBee5FcCa115C3"
+    },
+    "ContinuousVestingMerkleDistributor": {
+      "address": "0x6Df62c6066932fcB66dC5117C2CE9a64e82821CE"
+    },
+    "ContinuousVestingMerkleDistributorFactory": {
+      "address": "0x6544DF621978F860CB2da6b8987968679Cb2BFA1"
+    },
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0x3526D3C2d6481Ec6843B41533727EeaE4312D26C"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0x99C9b22050E560E34d903a89388F4E41fCD61895"
+    }
+  },
+  "gnosis": {
+    "Registry": {
+      "address": "0x9dEbe59f42Be5152B3C98c09bAA705d09253fE4D"
+    },
+    "Satellite": {
+      "address": "0x6D4D82aE73DC9059Ac83B085b2505e00b5eF8511"
+    }
+  },
+  "arbitrum": {
+    "CrosschainTrancheVestingMerkle": {
+      "address": "0xE6B7aB9EBCfBF1A72E489ff00CdF9C6473ff6224"
+    },
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0x21896f02b7B33A8da6eC42a01D8C450D7A868A35"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0x0CaB80bCf2931DebDB1bd9137A3aF86C957b6e96"
+    }
+  },
+  "matic": {
+    "Satellite": {
+      "address": "0x83e8Cf4A51035665BAF97DdB0cf03b565AC76B44"
+    },
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0x48B8c957A91a5f2f5f751163B96C1BA7d8c1f1a7"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0xe12AA2502d536E6153a35341F897335E9B2e123F"
+    }
+  },
+  "optimism": {
+    "Satellite": {
+      "address": "0x9D9ce29Dc7812ccb63aB14EA987B52d9aF053Eb3"
+    },
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0x33f439DB3c004A0E6398FcCcf9f81d2637c226f9"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0x21896f02b7B33A8da6eC42a01D8C450D7A868A35"
+    }
+  },
+  "bsc": {
+    "ContinuousVestingMerkleDistributor": {
+      "address": "0x31184BEc8DA86A9A9041C835Ce020e2862b78138"
+    },
+    "ContinuousVestingMerkleDistributorFactory": {
+      "address": "0xC8f492F6E0B573BC92f463F93d88D0210DFf480d"
+    },
+    "TrancheVestingMerkleDistributor": {
+      "address": "0xa75A233eA0CE3155b50394011A298DB3466A8e94"
+    },
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0x700A81a525E259f13233c8da11b1d4632f3fdF91"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0x33f439DB3c004A0E6398FcCcf9f81d2637c226f9"
+    }
+  },
+  "mainnet": {
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0x70E0E5a16c981eFF0720f226A2E8ff418B5f3954"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0x57c08f6827DC9A88b253830D73E0d8314b32E8D1"
+    }
+  },
+  "bscTestnet": {
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0x700A81a525E259f13233c8da11b1d4632f3fdF91"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0x33f439DB3c004A0E6398FcCcf9f81d2637c226f9"
+    }
+  },
+  "avalanche": {
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0x0CaB80bCf2931DebDB1bd9137A3aF86C957b6e96"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0x797C0d5bC32bc29438c0555EA61EB0318bE40797"
+    }
+  },
+  "fuji": {
+    "FlatPriceSaleFactory_v_2_1": {
+      "address": "0x0CaB80bCf2931DebDB1bd9137A3aF86C957b6e96"
+    },
+    "FlatPriceSale_v_2_1": {
+      "address": "0x797C0d5bC32bc29438c0555EA61EB0318bE40797"
+    }
+  }
+}
