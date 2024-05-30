@@ -19,10 +19,10 @@ import "hardhat-jest"; // Typescript
 const { vars } = require("hardhat/config");
 
 // Add the following variables to the configuration variables.
-const ALCHEMY_API_KEY = vars.get("ALCHEMY_API_KEY");
-const EVM_PRIVATE_KEY_1 = vars.get("EVM_PRIVATE_KEY_1");
-const EVM_PRIVATE_KEY_2 = vars.get("EVM_PRIVATE_KEY_2");
-const ETHERSCAN_API_KEY = vars.get("ETHERSCAN_API_KEY");
+// const ALCHEMY_API_KEY = vars.get("ALCHEMY_API_KEY");
+// const EVM_PRIVATE_KEY_1 = vars.get("EVM_PRIVATE_KEY_1");
+// const EVM_PRIVATE_KEY_2 = vars.get("EVM_PRIVATE_KEY_2");
+// const ETHERSCAN_API_KEY = vars.get("ETHERSCAN_API_KEY");
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -34,16 +34,16 @@ const config: HardhatUserConfig = {
       },
       viaIR: true,
     },
-  },
-  networks: {
-    sepolia: {
-      url: `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
-      accounts: [EVM_PRIVATE_KEY_1, EVM_PRIVATE_KEY_2],
-    },
-  },
-  etherscan: {
-    apiKey: ETHERSCAN_API_KEY,
-  },
+  }
+  // networks: {
+  //   sepolia: {
+  //     url: `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
+  //     accounts: [EVM_PRIVATE_KEY_1, EVM_PRIVATE_KEY_2],
+  //   },
+  // },
+  // etherscan: {
+  //   apiKey: ETHERSCAN_API_KEY,
+  // },
 };
 
 export default config;
